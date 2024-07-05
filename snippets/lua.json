@@ -1,0 +1,11 @@
+{
+  "local function": {
+    "prefix": "lf",
+    "body": [
+      "local ${1:name} = function($2)",
+      "\t${0:-- code}",
+      "end"
+    ],
+    "description": "Snippet for a local function"
+  }
+}
