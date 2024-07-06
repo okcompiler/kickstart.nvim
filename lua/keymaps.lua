@@ -58,6 +58,12 @@ vim.keymap.set('n', '<leader>pi', '<cmd>Lazy install<CR>', { desc = '[I]nstall' 
 vim.keymap.set('n', '<leader>Tc', '<cmd>TSConfigInfo<CR>', { desc = '[C]onfig info' })
 vim.keymap.set('n', '<leader>Ti', '<cmd>TSInstallInfo<CR>', { desc = '[I]nstall info' })
 
+-- Vimux keymaps
+vim.keymap.set('n', '<leader>vp', '<cmd>VimuxPromptCommand<CR>', { desc = '[P]rompt' })
+vim.keymap.set('n', '<leader>vl', '<cmd>VimuxRunLastCommand<CR>', { desc = '[L]ast command' })
+vim.keymap.set('n', '<leader>vgb', '<cmd>VimuxRunCommand("clear; echo go build; go build")<CR>', { desc = '[B]uild' })
+vim.keymap.set('n', '<leader>vgr', '<cmd>VimuxRunCommand("clear; echo go run .; go run .")<CR>', { desc = '[R]un .' })
+
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
 -- is not what someone will guess without a bit more experience.

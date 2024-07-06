@@ -34,6 +34,14 @@ return {
       ['<leader>s'] = { name = '[S]earch', _ = 'which_key_ignore' },
       ['<leader>t'] = { name = '[T]est', _ = 'which_key_ignore' },
       ['<leader>T'] = { name = '[T]reesitter', _ = 'which_key_ignore' },
+      ['<leader>v'] = {
+        name = '[V]imux',
+        _ = 'which_key_ignore',
+        g = {
+          name = '[G]o',
+          _ = 'which_key_ignore',
+        },
+      },
       ['<leader>W'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
       -- TODO: This was replaced with clear search highlights
       -- ['<leader>h'] = { name = 'Git [H]unk', _ = 'which_key_ignore' },
