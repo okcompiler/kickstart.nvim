@@ -5,6 +5,7 @@ return {
     vim.g['test#strategy'] = 'vimux'
     vim.g['test#neovim#term_position'] = 'vert'
     vim.g['test#ruby#use_binstubs'] = 0
+    vim.g['test#go#gotest#options'] = '-v'
 
     -- Testing keymaps
     vim.keymap.set('n', '<leader>tn', '<cmd>TestNearest<CR>', { desc = '[T]est [N]earest to cursor' })
