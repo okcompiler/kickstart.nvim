@@ -215,6 +215,11 @@ return {
       'gofumpt', -- More strict Go formatting
       'goimports', -- Go imports support
       'golines', -- Limit the line length in Go
+      'templ', -- Go's templ library lsp
+      'staticcheck', -- Go linter
+      'jsonls', -- JSON
+      'markdownlint', -- Markdown linting
+      'emmet-language-server', -- Emmet for HTML
     })
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
