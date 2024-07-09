@@ -178,6 +178,7 @@ return {
           gopls = {
             gofumpt = true,
             usePlaceholders = true,
+            staticcheck = true,
           },
         },
       },
