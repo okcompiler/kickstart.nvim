@@ -62,7 +62,15 @@ vim.keymap.set('n', '<leader>Ti', '<cmd>TSInstallInfo<CR>', { desc = '[I]nstall 
 vim.keymap.set('n', '<leader>vp', '<cmd>VimuxPromptCommand<CR>', { desc = '[P]rompt' })
 vim.keymap.set('n', '<leader>vl', '<cmd>VimuxRunLastCommand<CR>', { desc = '[L]ast command' })
 vim.keymap.set('n', '<leader>vgb', '<cmd>VimuxRunCommand("clear; echo go build; go build")<CR>', { desc = '[B]uild' })
+vim.keymap.set(
+  'n',
+  '<leader>vgc',
+  '<cmd>VimuxRunCommand("clear; echo Generating go test coverage; go test -coverprofile cover.out && go tool cover -html=cover.out")<CR>',
+  { desc = '[C]overage' }
+)
 vim.keymap.set('n', '<leader>vgr', '<cmd>VimuxRunCommand("clear; echo go run .; go run .")<CR>', { desc = '[R]un .' })
+vim.keymap.set('n', '<leader>vgt', '<cmd>VimuxRunCommand("clear; echo go mod tidy; go mod tidy")<CR>', { desc = '[T]idy' })
+vim.keymap.set('n', '<leader>vgv', '<cmd>VimuxRunCommand("clear; echo go mod vendor; go mod vendor")<CR>', { desc = '[V]endor' })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
