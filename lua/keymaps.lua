@@ -11,13 +11,13 @@ vim.keymap.set('n', '<leader>w', '<cmd>w!<CR>', { desc = 'Save' })
 vim.keymap.set('n', '<leader>q', '<cmd>confirm q<CR>', { desc = 'Quit' })
 
 -- Close buffer with <leader>c
-vim.keymap.set('n', '<leader>c', '<cmd>BufferKill<CR>', { desc = 'Close Buffer' })
+vim.keymap.set('n', '<leader>c', '<cmd>BufferKill<CR>', { desc = 'Close buffer' })
 
 -- Go to Alpha screen
 vim.keymap.set('n', '<leader>;', '<cmd>Alpha<CR>', { desc = 'Alpha' })
 
 -- Toggle NvimTree Explorer
-vim.keymap.set('n', '<leader>e', '<cmd>NvimTreeToggle<CR>', { desc = '[E]xplorer' })
+vim.keymap.set('n', '<leader>e', '<cmd>NvimTreeToggle<CR>', { desc = 'Explorer' })
 
 -- Using 0 goes to the first non-whitespace character on the line
 vim.keymap.set('n', '0', '^')
@@ -45,32 +45,32 @@ vim.keymap.set('n', '<leader>bD', '<cmd>BufferLineSortByDirectory<CR>', { desc =
 vim.keymap.set('n', '<leader>bL', '<cmd>BufferLineSortByExtension<CR>', { desc = 'Sort by language' })
 
 -- Diagnostic keymaps
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
 -- TODO: Set-up which-key for these two mappings to mimic LunarVim
-vim.keymap.set('n', 'gl', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
+vim.keymap.set('n', 'gl', vim.diagnostic.open_float, { desc = 'Show diagnostic error messages' })
 
 -- Plugins keymaps
-vim.keymap.set('n', '<leader>ph', '<cmd>Lazy home<CR>', { desc = '[H]ome' })
-vim.keymap.set('n', '<leader>pi', '<cmd>Lazy install<CR>', { desc = '[I]nstall' })
+vim.keymap.set('n', '<leader>ph', '<cmd>Lazy home<CR>', { desc = 'Home' })
+vim.keymap.set('n', '<leader>pi', '<cmd>Lazy install<CR>', { desc = 'Install' })
 
 -- Treesitter keymaps
-vim.keymap.set('n', '<leader>Tc', '<cmd>TSConfigInfo<CR>', { desc = '[C]onfig info' })
-vim.keymap.set('n', '<leader>Ti', '<cmd>TSInstallInfo<CR>', { desc = '[I]nstall info' })
+vim.keymap.set('n', '<leader>Tc', '<cmd>TSConfigInfo<CR>', { desc = 'Config info' })
+vim.keymap.set('n', '<leader>Ti', '<cmd>TSInstallInfo<CR>', { desc = 'Install info' })
 
 -- Vimux keymaps
-vim.keymap.set('n', '<leader>vp', '<cmd>VimuxPromptCommand<CR>', { desc = '[P]rompt' })
-vim.keymap.set('n', '<leader>vl', '<cmd>VimuxRunLastCommand<CR>', { desc = '[L]ast command' })
-vim.keymap.set('n', '<leader>vgb', '<cmd>VimuxRunCommand("clear; echo go build; go build")<CR>', { desc = '[B]uild' })
+vim.keymap.set('n', '<leader>vp', '<cmd>VimuxPromptCommand<CR>', { desc = 'Prompt' })
+vim.keymap.set('n', '<leader>vl', '<cmd>VimuxRunLastCommand<CR>', { desc = 'Last command' })
+vim.keymap.set('n', '<leader>vgb', '<cmd>VimuxRunCommand("clear; echo go build; go build")<CR>', { desc = 'Build' })
 vim.keymap.set(
   'n',
   '<leader>vgc',
   '<cmd>VimuxRunCommand("clear; echo Generating go test coverage; go test -coverprofile cover.out && go tool cover -html=cover.out")<CR>',
-  { desc = '[C]overage' }
+  { desc = 'Coverage' }
 )
-vim.keymap.set('n', '<leader>vgr', '<cmd>VimuxRunCommand("clear; echo go run .; go run .")<CR>', { desc = '[R]un .' })
-vim.keymap.set('n', '<leader>vgt', '<cmd>VimuxRunCommand("clear; echo go mod tidy; go mod tidy")<CR>', { desc = '[T]idy' })
-vim.keymap.set('n', '<leader>vgv', '<cmd>VimuxRunCommand("clear; echo go mod vendor; go mod vendor")<CR>', { desc = '[V]endor' })
+vim.keymap.set('n', '<leader>vgr', '<cmd>VimuxRunCommand("clear; echo go run .; go run .")<CR>', { desc = 'Run .' })
+vim.keymap.set('n', '<leader>vgt', '<cmd>VimuxRunCommand("clear; echo go mod tidy; go mod tidy")<CR>', { desc = 'Tidy' })
+vim.keymap.set('n', '<leader>vgv', '<cmd>VimuxRunCommand("clear; echo go mod vendor; go mod vendor")<CR>', { desc = 'Vendor' })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which

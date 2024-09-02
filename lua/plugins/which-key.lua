@@ -24,30 +24,30 @@ return {
 
     -- Document existing key chains
     require('which-key').register {
-      ['<leader>b'] = { name = '[B]uffers', _ = 'which_key_ignore' },
-      ['<leader>d'] = { name = '[D]ebug', _ = 'which_key_ignore' },
-      ['<leader>i'] = { name = '[I]nlay', _ = 'which_key_ignore' },
-      ['<leader>l'] = { name = '[L]SP', _ = 'which_key_ignore' },
-      ['<leader>p'] = { name = '[P]lugins', _ = 'which_key_ignore' },
-      ['<leader>r'] = { name = '[R]ename', _ = 'which_key_ignore' },
-      ['<leader>s'] = { name = '[S]earch', _ = 'which_key_ignore' },
-      ['<leader>t'] = { name = '[T]est', _ = 'which_key_ignore' },
-      ['<leader>T'] = { name = '[T]reesitter', _ = 'which_key_ignore' },
+      ['<leader>b'] = { name = 'Buffers', _ = 'which_key_ignore' },
+      ['<leader>d'] = { name = 'Debug', _ = 'which_key_ignore' },
+      ['<leader>i'] = { name = 'Inlay', _ = 'which_key_ignore' },
+      ['<leader>l'] = { name = 'LSP', _ = 'which_key_ignore' },
+      ['<leader>p'] = { name = 'Plugins', _ = 'which_key_ignore' },
+      ['<leader>r'] = { name = 'Rename', _ = 'which_key_ignore' },
+      ['<leader>s'] = { name = 'Search', _ = 'which_key_ignore' },
+      ['<leader>t'] = { name = 'Test', _ = 'which_key_ignore' },
+      ['<leader>T'] = { name = 'Treesitter', _ = 'which_key_ignore' },
       ['<leader>v'] = {
-        name = '[V]imux',
+        name = 'Vimux',
         _ = 'which_key_ignore',
         g = {
-          name = '[G]o',
+          name = 'Go',
           _ = 'which_key_ignore',
         },
       },
-      ['<leader>W'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
+      ['<leader>W'] = { name = 'Workspace', _ = 'which_key_ignore' },
       -- TODO: This was replaced with clear search highlights
-      -- ['<leader>h'] = { name = 'Git [H]unk', _ = 'which_key_ignore' },
+      -- ['<leader>h'] = { name = 'Git hunk', _ = 'which_key_ignore' },
     }
     -- visual mode
     -- require('which-key').register({
-    --   ['<leader>h'] = { 'Git [H]unk' },
+    --   ['<leader>h'] = { 'Git hunk' },
     -- }, { mode = 'v' })
   end,
 }

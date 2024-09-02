@@ -56,52 +56,52 @@ return {
         -- Jump to the definition of the word under your cursor.
         --  This is where a variable was first declared, or where a function is defined, etc.
         --  To jump back, press <C-t>.
-        map('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
+        map('gd', require('telescope.builtin').lsp_definitions, 'Goto definition')
 
         -- Find references for the word under your cursor.
-        map('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
+        map('gr', require('telescope.builtin').lsp_references, 'Goto references')
 
         -- Jump to the implementation of the word under your cursor.
         --  Useful when your language has ways of declaring types without an actual implementation.
-        map('gI', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
+        map('gI', require('telescope.builtin').lsp_implementations, 'Goto implementation')
 
         -- Jump to the type of the word under your cursor.
         --  Useful when you're not sure what type a variable is and you want to see
         --  the definition of its *type*, not where it was *defined*.
-        map('<leader>D', require('telescope.builtin').lsp_type_definitions, 'Type [D]efinition')
+        map('<leader>D', require('telescope.builtin').lsp_type_definitions, 'Type definition')
 
         -- Fuzzy find all the symbols in your current workspace.
         --  Similar to document symbols, except searches over your entire project.
-        map('<leader>Ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
+        map('<leader>Ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, 'Symbols')
 
         -- Rename the variable under your cursor.
         --  Most Language Servers support renaming across files, etc.
-        map('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
+        map('<leader>rn', vim.lsp.buf.rename, 'Rename')
 
         -- Execute a code action, usually your cursor needs to be on top of an error
         -- or a suggestion from your LSP for this to activate.
-        map('<leader>la', vim.lsp.buf.code_action, 'Code [A]ction')
+        map('<leader>la', vim.lsp.buf.code_action, 'Code action')
 
         -- Open diagnostic quickfix list
-        map('<leader>lq', vim.diagnostic.setloclist, 'Open diagnostic [Q]uickfix list')
+        map('<leader>lq', vim.diagnostic.setloclist, 'Open diagnostic quickfix list')
 
         -- Open LSP client info
-        map('<leader>li', '<cmd>LspInfo<CR>', 'LSP client [I]nfo')
+        map('<leader>li', '<cmd>LspInfo<CR>', 'LSP client info')
 
         -- Open Mason info
-        map('<leader>lI', '<cmd>Mason<CR>', 'Mason [I]nfo')
+        map('<leader>lI', '<cmd>Mason<CR>', 'Mason info')
 
         -- Fuzzy find all the symbols in your current document.
         --  Symbols are things like variables, functions, types, etc.
-        map('<leader>ls', require('telescope.builtin').lsp_document_symbols, 'Document [S]ymbols')
+        map('<leader>ls', require('telescope.builtin').lsp_document_symbols, 'Document symbols')
 
         -- Opens a popup that displays documentation about the word under your cursor
         --  See `:help K` for why this keymap.
-        map('K', vim.lsp.buf.hover, 'Hover Documentation')
+        map('K', vim.lsp.buf.hover, 'Hover documentation')
 
         -- WARN: This is not Goto Definition, this is Goto Declaration.
         --  For example, in C this would take you to the header.
-        map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
+        map('gD', vim.lsp.buf.declaration, 'Goto declaration')
 
         -- The following two autocommands are used to highlight references of the
         -- word under your cursor when your cursor rests there for a little while.
@@ -139,7 +139,7 @@ return {
         if client and client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint then
           map('<leader>ih', function()
             vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
-          end, 'Toggle [I]nlay [H]ints')
+          end, 'Toggle inlay hints')
         end
       end,
     })

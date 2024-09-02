@@ -18,10 +18,10 @@ return {
 
     -- Set menu
     dashboard.section.buttons.val = {
-      dashboard.button('f', '󰈞' .. '  Find File', '<CMD>Telescope find_files<CR>'),
-      dashboard.button('n', '' .. '  New File', '<CMD>ene!<CR>'),
+      dashboard.button('f', '󰈞' .. '  Find file', '<CMD>Telescope find_files<CR>'),
+      dashboard.button('n', '' .. '  New file', '<CMD>ene!<CR>'),
       dashboard.button('r', '' .. '  Recent files', ':Telescope oldfiles <CR>'),
-      dashboard.button('t', '󰊄' .. '  Find Text', '<CMD>Telescope live_grep<CR>'),
+      dashboard.button('t', '󰊄' .. '  Find text', '<CMD>Telescope live_grep<CR>'),
       dashboard.button('c', '' .. '  Configuration', '<cmd>e $MYVIMRC<CR>'),
       dashboard.button('q', '󰅖' .. '  Quit', '<cmd>quit<CR>'),
     }

@@ -8,10 +8,10 @@ return {
     vim.g['test#go#gotest#options'] = '-v'
 
     -- Testing keymaps
-    vim.keymap.set('n', '<leader>tn', '<cmd>TestNearest<CR>', { desc = '[T]est [N]earest to cursor' })
-    vim.keymap.set('n', '<leader>tf', '<cmd>TestFile<CR>', { desc = '[T]est current [F]ile' })
-    vim.keymap.set('n', '<leader>ts', '<cmd>TestSuite<CR>', { desc = '[T]est entire [S]uite' })
-    vim.keymap.set('n', '<leader>tl', '<cmd>TestLast<CR>', { desc = '[T]est [L]ast one again' })
-    vim.keymap.set('n', '<leader>tv', '<cmd>TestVisit<CR>', { desc = '[T]est [V]isit file' })
+    vim.keymap.set('n', '<leader>tn', '<cmd>TestNearest<CR>', { desc = 'Test nearest to cursor' })
+    vim.keymap.set('n', '<leader>tf', '<cmd>TestFile<CR>', { desc = 'Test current file' })
+    vim.keymap.set('n', '<leader>ts', '<cmd>TestSuite<CR>', { desc = 'Test entire suite' })
+    vim.keymap.set('n', '<leader>tl', '<cmd>TestLast<CR>', { desc = 'Test last one again' })
+    vim.keymap.set('n', '<leader>tv', '<cmd>TestVisit<CR>', { desc = 'Test visit file' })
   end,
 }
