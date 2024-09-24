@@ -91,6 +91,9 @@ return {
         -- Open Mason info
         map('<leader>lI', '<cmd>Mason<CR>', 'Mason info')
 
+        -- Open LSP log
+        map('<leader>ll', '<cmd>LspLog<CR>', 'Log')
+
         -- Fuzzy find all the symbols in your current document.
         --  Symbols are things like variables, functions, types, etc.
         map('<leader>ls', require('telescope.builtin').lsp_document_symbols, 'Document symbols')
