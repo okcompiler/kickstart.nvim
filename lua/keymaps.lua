@@ -47,7 +47,6 @@ vim.keymap.set('n', '<leader>bL', '<cmd>BufferLineSortByExtension<CR>', { desc =
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
--- TODO: Set-up which-key for these two mappings to mimic LunarVim
 vim.keymap.set('n', 'gl', vim.diagnostic.open_float, { desc = 'Show diagnostic error messages' })
 
 -- Plugins keymaps
