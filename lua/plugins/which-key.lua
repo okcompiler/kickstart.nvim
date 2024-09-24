@@ -19,35 +19,51 @@ return {
   event = 'VimEnter', -- Sets the loading event to 'VimEnter'
   config = function() -- This is the function that runs, AFTER loading
     require('which-key').setup {
-      ignore_missing = true, -- Ignore missing keymaps
+      icons = {
+        mappings = false,
+      },
+      filter = function(mapping)
+        -- Exclude mappings without a description
+        return mapping.desc and mapping.desc ~= ''
+      end,
     }
 
     -- Document existing key chains
-    require('which-key').register {
-      ['<leader>b'] = { name = 'Buffers', _ = 'which_key_ignore' },
-      ['<leader>d'] = { name = 'Debug', _ = 'which_key_ignore' },
-      ['<leader>i'] = { name = 'Inlay', _ = 'which_key_ignore' },
-      ['<leader>l'] = { name = 'LSP', _ = 'which_key_ignore' },
-      ['<leader>p'] = { name = 'Plugins', _ = 'which_key_ignore' },
-      ['<leader>r'] = { name = 'Rename', _ = 'which_key_ignore' },
-      ['<leader>s'] = { name = 'Search', _ = 'which_key_ignore' },
-      ['<leader>t'] = { name = 'Test', _ = 'which_key_ignore' },
-      ['<leader>T'] = { name = 'Treesitter', _ = 'which_key_ignore' },
-      ['<leader>v'] = {
-        name = 'Vimux',
-        _ = 'which_key_ignore',
-        g = {
-          name = 'Go',
-          _ = 'which_key_ignore',
-        },
-      },
-      ['<leader>W'] = { name = 'Workspace', _ = 'which_key_ignore' },
+    require('which-key').add {
+      { '<leader>b', group = 'Buffers' },
+      { '<leader>b_', hidden = true },
+      { '<leader>d', group = 'Debug' },
+      { '<leader>d_', hidden = true },
+      { '<leader>i', group = 'Inlay' },
+      { '<leader>i_', hidden = true },
+      { '<leader>l', group = 'LSP' },
+      { '<leader>l_', hidden = true },
+      { '<leader>p', group = 'Plugins' },
+      { '<leader>p_', hidden = true },
+      { '<leader>r', group = 'Rename' },
+      { '<leader>r_', hidden = true },
+      { '<leader>s', group = 'Search' },
+      { '<leader>s_', hidden = true },
+      { '<leader>t', group = 'Test' },
+      { '<leader>t_', hidden = true },
+      { '<leader>T', group = 'Treesitter' },
+      { '<leader>T_', hidden = true },
+      { '<leader>v', group = 'Vimux' },
+      { '<leader>v_', hidden = true },
+      { '<leader>vg', group = 'Go' },
+      { '<leader>vg_', hidden = true },
+      { '<leader>W', group = 'Workspace' },
+      { '<leader>W_', hidden = true },
       -- TODO: This was replaced with clear search highlights
-      -- ['<leader>h'] = { name = 'Git hunk', _ = 'which_key_ignore' },
+      -- { '<leader>h', group = 'Git hunk' },
+      -- { '<leader>h_', hidden = true },
+
+      -- visual mode
+      -- {
+      --   mode = { 'v' },
+      --   { '<leader>h', group = 'Git hunk' },
+      --   { '<leader>h_', hidden = true },
+      -- },
     }
-    -- visual mode
-    -- require('which-key').register({
-    --   ['<leader>h'] = { 'Git hunk' },
-    -- }, { mode = 'v' })
   end,
 }
