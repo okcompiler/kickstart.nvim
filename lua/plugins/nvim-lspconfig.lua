@@ -225,7 +225,7 @@ return {
       'staticcheck', -- Go linter
       'jsonls', -- JSON
       'markdownlint', -- Markdown linting
-      'emmet-language-server', -- Emmet for HTML
+      -- 'emmet-language-server', -- Emmet for HTML
     })
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
