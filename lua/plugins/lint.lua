@@ -8,6 +8,7 @@ return {
       lint.linters_by_ft = {
         markdown = { 'markdownlint' },
         -- go = { 'staticcheck' }, -- Disabling for now, installed via Mason and included in gopls configuration instead
+        eruby = { 'erb_lint' },
       }
 
       -- To allow other plugins to add linters to require('lint').linters_by_ft,
