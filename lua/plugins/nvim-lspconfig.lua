@@ -202,6 +202,7 @@ return {
       },
 
       ruby_lsp = {},
+      yamlls = {},
     }
 
     -- Ensure the servers and tools above are installed
