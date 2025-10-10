@@ -32,6 +32,12 @@ vim.keymap.set('n', 'vv', '<C-w>v')
 -- Reload LuaSnip and snippets without having to restart
 vim.keymap.set('n', '<leader><leader>s', '<cmd>Lazy reload LuaSnip<CR>')
 
+-- Open Mason
+vim.keymap.set('n', '<leader>M', '<cmd>Mason<CR>', { desc = 'Mason' })
+
+-- Open vim-fugitive
+vim.keymap.set('n', '<leader>g', '<cmd>G<CR>', { desc = 'Git' })
+
 -- Buffer keymaps
 vim.keymap.set('n', '<leader>bj', '<cmd>BufferLinePick<CR>', { desc = 'Jump' })
 vim.keymap.set('n', '<leader>bf', '<cmd>Telescope buffers previewer=true<CR>', { desc = 'Find' })
@@ -52,6 +58,7 @@ vim.keymap.set('n', 'gl', vim.diagnostic.open_float, { desc = 'Show diagnostic e
 -- Plugins keymaps
 vim.keymap.set('n', '<leader>ph', '<cmd>Lazy home<CR>', { desc = 'Home' })
 vim.keymap.set('n', '<leader>pi', '<cmd>Lazy install<CR>', { desc = 'Install' })
+vim.keymap.set('n', '<leader>ps', '<cmd>Lazy sync<CR>', { desc = 'Sync' })
 
 -- Treesitter keymaps
 vim.keymap.set('n', '<leader>Tc', '<cmd>TSConfigInfo<CR>', { desc = 'Config info' })

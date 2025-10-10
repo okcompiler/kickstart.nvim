@@ -54,6 +54,7 @@ return {
       { '<leader>vg_', hidden = true },
       { '<leader>W', group = 'Workspace' },
       { '<leader>W_', hidden = true },
+
       -- TODO: This was replaced with clear search highlights
       -- { '<leader>h', group = 'Git hunk' },
       -- { '<leader>h_', hidden = true },
@@ -64,6 +65,10 @@ return {
       --   { '<leader>h', group = 'Git hunk' },
       --   { '<leader>h_', hidden = true },
       -- },
+
+      -- Hide these keymaps from appearing in the which-key popup
+      -- Run :checkhealth in a vertical split
+      { '<leader>Ch', '<cmd>vert checkhealth<CR>', desc = 'Check health', hidden = true },
     }
   end,
 }

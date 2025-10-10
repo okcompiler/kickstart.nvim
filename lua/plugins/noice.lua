@@ -14,10 +14,10 @@ return {
           ['cmp.entry.get_documentation'] = true,
         },
         hover = {
-          enabled = false,
+          enabled = true,
         },
         signature = {
-          enabled = false,
+          enabled = true,
         },
       },
       presets = {

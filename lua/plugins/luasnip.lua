@@ -24,6 +24,8 @@ return {
     local ls = require 'luasnip'
     -- local types = require 'luasnip.util.types'
 
+    ls.filetype_extend('eruby', { 'html', 'rails' })
+
     ls.setup {
       update_events = { 'TextChanged', 'TextChangedI' },
       ext_opts = {

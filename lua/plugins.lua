@@ -15,7 +15,7 @@ return {
   { 'tpope/vim-sleuth' }, -- Detect tabstop and shiftwidth automatically
   { 'tpope/vim-repeat' },
   { 'tpope/vim-bundler' },
-  { 'tpope/vim-rails' },
+  { 'slim-template/vim-slim' }, -- Slim syntax highlighting for vim
 
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following

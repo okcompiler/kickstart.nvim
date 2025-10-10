@@ -3,7 +3,7 @@ return {
   'neovim/nvim-lspconfig',
   dependencies = {
     -- Automatically install LSPs and related tools to stdpath for Neovim
-    { 'williamboman/mason.nvim', config = true }, -- NOTE: Must be loaded before dependants
+    { 'williamboman/mason.nvim', config = true }, -- NOTE: Must be loaded before dependents
     'williamboman/mason-lspconfig.nvim',
     'WhoIsSethDaniel/mason-tool-installer.nvim',
 
@@ -88,9 +88,6 @@ return {
         -- Open LSP client info
         map('<leader>li', '<cmd>LspInfo<CR>', 'LSP client info')
 
-        -- Open Mason info
-        map('<leader>lI', '<cmd>Mason<CR>', 'Mason info')
-
         -- Open LSP log
         map('<leader>ll', '<cmd>LspLog<CR>', 'Log')
 
@@ -172,9 +169,8 @@ return {
       -- Some languages (like typescript) have entire language plugins that can be useful:
       --    https://github.com/pmizio/typescript-tools.nvim
       --
-      -- But for many setups, the LSP (`tsserver`) will work just fine
-      -- tsserver = {},
-      --
+      -- But for many setups, the LSP (`ts_ls`) will work just fine
+      ts_ls = {},
 
       gopls = {
         settings = {
@@ -200,9 +196,6 @@ return {
           },
         },
       },
-
-      ruby_lsp = {},
-      yamlls = {},
     }
 
     -- Ensure the servers and tools above are installed
@@ -225,7 +218,7 @@ return {
       'staticcheck', -- Go linter
       'jsonls', -- JSON
       'markdownlint', -- Markdown linting
-      -- 'emmet-language-server', -- Emmet for HTML
+      'erb-formatter', -- Embedded ruby formatting
     })
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -235,11 +228,58 @@ return {
           local server = servers[server_name] or {}
           -- This handles overriding only values explicitly passed
           -- by the server configuration above. Useful when disabling
-          -- certain features of an LSP (for example, turning off formatting for tsserver)
+          -- certain features of an LSP (for example, turning off formatting for ts_ls)
           server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
           require('lspconfig')[server_name].setup(server)
         end,
       },
+    }
+
+    -- The following function adds the ShowRubyDeps command to show dependencies in the quickfix list
+    local function add_ruby_deps_command(client, bufnr)
+      vim.api.nvim_buf_create_user_command(bufnr, 'ShowRubyDeps', function(opts)
+        local params = vim.lsp.util.make_text_document_params()
+        local showAll = opts.args == 'all'
+
+        client.request('rubyLsp/workspace/dependencies', params, function(error, result)
+          if error then
+            print('Error showing deps: ' .. error)
+            return
+          end
+
+          local qf_list = {}
+          for _, item in ipairs(result) do
+            if showAll or item.dependency then
+              table.insert(qf_list, {
+                text = string.format('%s (%s) - %s', item.name, item.version, item.dependency),
+                filename = item.path,
+              })
+            end
+          end
+
+          vim.fn.setqflist(qf_list)
+          vim.cmd 'copen'
+        end, bufnr)
+      end, {
+        nargs = '?',
+        complete = function()
+          return { 'all' }
+        end,
+      })
+    end
+
+    -- Using Mason to manage the Ruby LSP server may cause errors
+    -- Use lspconfig directly instead
+    -- https://shopify.github.io/ruby-lsp/editors#mason
+    local lspconfig = require 'lspconfig'
+    lspconfig.ruby_lsp.setup {
+      init_options = {
+        formatter = 'rubocop',
+        linters = { 'rubocop' },
+      },
+      on_attach = function(client, buffer)
+        add_ruby_deps_command(client, buffer)
+      end,
     }
   end,
 }
